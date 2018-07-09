@@ -1,32 +1,34 @@
 package demo.auth.example;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
+import java.io.IOException;
+
+import javax.ws.rs.core.MediaType;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpStatus;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 
-import demo.auth.example.Application;
 import demo.auth.example.config.security.AuthFilter;
 import demo.auth.example.model.dto.ErrorResponse;
 import demo.auth.example.model.dto.LoginResponse;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.context.embedded.LocalServerPort;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.http.HttpStatus;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import javax.ws.rs.core.MediaType;
-import java.io.IOException;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = {Application.class}, webEnvironment = WebEnvironment.RANDOM_PORT)
+@Ignore
 public class IntegrationTest {
 
 	@LocalServerPort
