@@ -28,7 +28,6 @@ import demo.auth.example.model.dto.LoginResponse;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = {Application.class}, webEnvironment = WebEnvironment.RANDOM_PORT)
-@Ignore
 public class IntegrationTest {
 
 	@LocalServerPort
